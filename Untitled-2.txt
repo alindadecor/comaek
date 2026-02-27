@@ -1,0 +1,17 @@
+### Example: fresh clones
+```shell
+# instead of `git clone https://example.com/open-source/library.git`, run:
+git clone https://contrib123@example.com/open-source/library.git
+
+# instead of `git clone https://example.com/big-company/secret-repo.git`, run:
+git clone https://employee9999@example.com/big-company/secret-repo.git
+```
+
+### Example: existing clones
+```shell
+# in the `library` repo, run:
+git remote set-url origin https://contrib123@example.com/open-source/library.git
+
+# in the `secret-repo` repo, run:
+git remote set-url origin https://employee9999@example.com/big-company/secret-repo.git
+```

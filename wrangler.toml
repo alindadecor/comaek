@@ -3,7 +3,7 @@ account_id = "6d55e625a06a58d639a905e5d71bf5e4"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
-pages_build_output_dir = ".vercel/output/static"
+pages_build_output_dir = ".worker-next"
 
 # ── D1 Database ──────────────────────────────────────────────────────────────
 # Run: npx wrangler d1 create farmkung-db
