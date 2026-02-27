@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import "./page.css"; 
+import "./page.css";
 import DistributionMap from "../components/DistributionMap";
 
 // 1. Data Configuration
@@ -60,7 +60,7 @@ export default function HomePage() {
                     el.closest('.bento-card')?.classList.toggle('is-flipping');
                     setTimeout(() => { el.closest('.bento-card')?.classList.remove('is-flipping'); }, 800);
                 }
-            }, 4000 + (Math.random() * 5000)); 
+            }, 4000 + (Math.random() * 5000));
             flipIntervals.push(timer);
         });
 
@@ -94,10 +94,10 @@ export default function HomePage() {
             return (
                 <div className={`relative w-full h-full ${data.isQR ? 'bg-gray-100' : 'bg-gray-200'}`}>
                     {data.image && (
-                        <img 
-                            src={data.image} 
-                            alt={data.title || ''} 
-                            className={`w-full h-full ${data.isQR ? 'object-contain p-4 pb-20' : 'object-cover'}`} 
+                        <img
+                            src={data.image}
+                            alt={data.title || ''}
+                            className={`w-full h-full ${data.isQR ? 'object-contain p-4 pb-20' : 'object-cover'}`}
                         />
                     )}
                     <div className={`absolute inset-0 bg-gradient-to-t ${data.isQR ? 'from-black/90 via-transparent' : 'from-black/80 via-black/20'} to-transparent opacity-90`}></div>
@@ -105,7 +105,7 @@ export default function HomePage() {
                     {renderText(data)}
                 </div>
             );
-        } else if (data.type === 'video') { 
+        } else if (data.type === 'video') {
             return (
                 <div className="relative w-full h-full bg-gray-900">
                     {data.video && (
@@ -140,12 +140,12 @@ export default function HomePage() {
 
             {/* 🌟 HERO SECTION 🌟 */}
             <div className="relative w-full h-[65vh] md:h-[75vh] flex items-center justify-center overflow-hidden">
-                <img 
-                    src="/hero-bg.png" 
-                    alt="Premium Seafood by Chor Farmkung" 
+                <img
+                    src="/hero-bg.png"
+                    alt="Premium Seafood by Chor Farmkung"
                     className="absolute inset-0 w-full h-full object-cover object-center"
                 />
-                
+
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#f0f4f8]"></div>
 
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
@@ -158,7 +158,7 @@ export default function HomePage() {
                     <p className="text-sm md:text-lg text-gray-300 mb-8 max-w-2xl drop-shadow line-clamp-3">
                         ผู้นำด้านการเพาะเลี้ยงและส่งออกกุ้งคุณภาพมาตรฐาน GAP พร้อมส่งมอบความสดใหม่ ปลอดภัย และใส่ใจสิ่งแวดล้อม
                     </p>
-                    
+
                     <div className="flex flex-col sm:flex-row gap-4">
                         <a href="#products" className="px-8 py-3 bg-[#D90429] text-white font-semibold rounded-full hover:bg-red-700 transition duration-300 shadow-[0_0_15px_rgba(217,4,41,0.5)]">
                             ดูสินค้าของเรา
@@ -175,7 +175,7 @@ export default function HomePage() {
             {/* แก้ไขตรงนี้: เปลี่ยนจาก max-w-7xl เป็น w-full และใช้ max-w-[1920px] กันหน้าจอ 4K เพี้ยน พร้อมเพิ่ม padding ซ้ายขวา */}
             <div className="bento-wrapper pt-8">
                 <div className="w-full max-w-[1920px] mx-auto px-4 md:px-8 xl:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px] grid-flow-dense pb-20">
-                    {gridItems.map((item) => {
+                    {gridItems.map((item: any) => {
                         const isLive = item.type === 'live';
                         const cardClassName = `bento-card rounded-2xl cursor-pointer block group ${item.colSpan} ${item.rowSpan} ${item.animation} ${isLive ? 'live-tile-wrapper' : ''}`;
 
@@ -232,27 +232,27 @@ export default function HomePage() {
                                         </div>
                                     </div>
                                 )}
-                                
+
                                 {item.type === 'slideshow' && (
                                     <>
                                         <div className="absolute inset-0 slideshow-container overflow-hidden bg-gray-200">
                                             {item.images?.map((mediaUrl: string, idx: number) => {
                                                 const isVideo = mediaUrl.toLowerCase().endsWith('.mp4');
-                                                
+
                                                 return isVideo ? (
-                                                    <video 
-                                                        key={idx} 
-                                                        src={mediaUrl} 
-                                                        className={`slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`} 
-                                                        style={{ zIndex: idx === 0 ? 1 : 0 }} 
-                                                        autoPlay muted loop playsInline 
+                                                    <video
+                                                        key={idx}
+                                                        src={mediaUrl}
+                                                        className={`slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`}
+                                                        style={{ zIndex: idx === 0 ? 1 : 0 }}
+                                                        autoPlay muted loop playsInline
                                                     />
                                                 ) : (
-                                                    <img 
-                                                        key={idx} 
-                                                        src={mediaUrl} 
-                                                        className={`slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`} 
-                                                        style={{ zIndex: idx === 0 ? 1 : 0 }} 
+                                                    <img
+                                                        key={idx}
+                                                        src={mediaUrl}
+                                                        className={`slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === 0 ? 'opacity-100' : 'opacity-0'}`}
+                                                        style={{ zIndex: idx === 0 ? 1 : 0 }}
                                                         alt={item.title || "Slideshow image"}
                                                     />
                                                 );
