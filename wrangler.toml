@@ -4,11 +4,7 @@ compatibility_flags = ["nodejs_compat"]
 
 pages_build_output_dir = ".worker-next"
 
-[build]
-command = "npm install --legacy-peer-deps && npm run pages:build"
-
-[build.environment]
-NODE_VERSION = "20"
+# ลบ [build] section ออก
 
 [[d1_databases]]
 binding = "DB"
