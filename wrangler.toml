@@ -11,7 +11,7 @@ pages_build_output_dir = ".vercel/output/static"
 [[d1_databases]]
 binding = "DB"
 database_name = "farmkung-db"
-database_id = "REPLACE_WITH_DATABASE_ID"
+database_id = "1dbc5d46-3915-41bb-a0c8-7ddb6950b851"
 
 # ── R2 Bucket ────────────────────────────────────────────────────────────────
 # Run: npx wrangler r2 bucket create farmkung-assets
