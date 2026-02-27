@@ -1,5 +1,4 @@
 name = "company-website"
-account_id = "6d55e625a06a58d639a905e5d71bf5e4"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
