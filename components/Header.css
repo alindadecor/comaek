@@ -1,0 +1,129 @@
+/* ดึงรูปภาพแบนเนอร์มาเป็นพื้นหลัง Header */
+.header-container {
+  position: relative; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%; 
+  background-image: url('/header-banner.jpg'); 
+  background-size: cover; 
+  background-position: center bottom; 
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  min-height: 100px; /* เพิ่มความสูงนิดนึงเพื่อรองรับโลโก้ที่ใหญ่ขึ้น */
+}
+
+/* -------------------------------------------
+   ส่วนของโลโก้ (อัปเดตใหม่ ใหญ่ขึ้นและมีข้อความ)
+---------------------------------------------*/
+.logo {
+  position: relative;
+  z-index: 10;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 15px; /* เพิ่มช่องว่างระหว่างโลโก้กับตัวหนังสือ */
+}
+
+.logo img {
+  height: 85px; /* 🌟 ขยายขนาดโลโก้ให้ใหญ่สะใจ (จากเดิม 65px) 🌟 */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); 
+}
+
+.logo-text {
+  display: block; 
+  color: #0A1931; /* 🌟 เปลี่ยนเป็นสีน้ำเงินเข้ม */
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  /* 🌟 ใส่ขอบสีขาวล้อมรอบ + เงาบางๆ ทำให้รอดทุกพื้นหลัง 🌟 */
+  text-shadow: 
+    -2px -2px 0 #FFFFFF,  
+     2px -2px 0 #FFFFFF,
+    -2px  2px 0 #FFFFFF,
+     2px  2px 0 #FFFFFF,
+     0px  4px 6px rgba(0,0,0,0.2);
+}
+
+/* -------------------------------------------
+   ส่วนของเมนู
+---------------------------------------------*/
+nav {
+  position: relative;
+  z-index: 10;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------------------
+   ส่วนของเมนู (อัปเดต: ขาว + ขอบดำคมๆ)
+---------------------------------------------*/
+.nav-menu li a {
+  text-decoration: none;
+  color: #FFFFFF; /* 🌟 เปลี่ยนกลับเป็นสีขาว */
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 15px;
+  
+  /* 🌟 สร้าง Stroke ขอบสีดำคมๆ + เงาฟุ้งนิดๆ ให้ลอยเด่นจากทุกพื้นหลัง 🌟 */
+  text-shadow: 
+    -1px -1px 0 #000000,  
+     1px -1px 0 #000000,
+    -1px  1px 0 #000000,
+     1px  1px 0 #000000,
+     0px  4px 6px rgba(0,0,0,0.4);
+}
+
+/* Hover แล้วมีพื้นหลังสีแดง */
+.nav-menu li a:hover {
+  color: #FFFFFF; 
+  background-color: #E31C23; /* พื้นหลังปุ่มสีแดง */
+  border-radius: 20px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(227, 28, 35, 0.4);
+  /* ตอนเอาเมาส์ชี้และมีปุ่มแดงรองรับแล้ว ให้เอาขอบดำออกเพื่อความคลีน */
+  text-shadow: none; 
+}
+
+.nav-menu li a::after {
+  display: none;
+}
+
+@media (max-width: 992px) {
+    .nav-menu { gap: 15px; }
+    .nav-menu li a { font-size: 14px; padding: 5px 10px; }
+    .logo-text { font-size: 20px; }
+    .logo img { height: 70px; }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+  .nav-menu {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-menu li a {
+      background-color: rgba(10, 25, 49, 0.6); 
+      border-radius: 15px;
+  }
+}

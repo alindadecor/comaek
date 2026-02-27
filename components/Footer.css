@@ -1,0 +1,159 @@
+/* ดึงรูปภาพแบนเนอร์มาเป็นพื้นหลัง Footer */
+.footer-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px;
+  font-family: inherit;
+  background-image: url('/footer-banner.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: #ffffff; 
+}
+
+/* ใส่ Overlay สีน้ำเงินจางๆ ทับบางส่วน เพื่อให้อ่านออกชัดเจนบนพื้นขาว */
+.footer-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10, 25, 49, 0.8) 0%, rgba(10, 25, 49, 0.2) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  position: relative;
+  z-index: 10;
+}
+
+/* กล่องใส่โลโก้ */
+.footer-logo-wrapper {
+  background-color: #ffffff; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  border: 2px solid #E31C23;
+}
+
+.footer-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-desc {
+  color: #f8fafc;
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 400px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.footer-links h3, .footer-contact h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.footer-links h3::after, .footer-contact h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #E31C23;
+  border-radius: 2px;
+}
+
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links ul li a {
+  color: #f8fafc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+.footer-links ul li a:hover { 
+  color: #E31C23; 
+  transform: translateX(5px); 
+}
+
+.footer-contact p {
+  color: #f8fafc;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* -------------------------------------------
+   🌟 ส่วนของไอคอน Social Media 🌟
+---------------------------------------------*/
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: #ffffff; /* ปุ่มสีขาวเด่นๆ */
+  color: #0A1931; /* สีไอคอน SVG เป็นน้ำเงินเข้ม */
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+}
+
+/* เอฟเฟกต์ตอนเอาเมาส์ชี้ (Hover) */
+.social-icons a:hover {
+  background-color: #E31C23; /* เปลี่ยนปุ่มเป็นสีแดง */
+  color: #ffffff; /* เปลี่ยนไอคอน SVG เป็นสีขาว */
+  transform: translateY(-5px) scale(1.1); 
+  box-shadow: 0 8px 20px rgba(227, 28, 35, 0.6); 
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 5%;
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.6); 
+  color: #cbd5e1;
+  font-size: 14px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 992px) {
+  .footer-content { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+  .footer-content { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+  .footer-logo { width: 200px; }
+}
