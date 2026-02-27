@@ -15,5 +15,5 @@ database_id = "REPLACE_WITH_DATABASE_ID"
 # ── R2 Bucket ────────────────────────────────────────────────────────────────
 # Run: npx wrangler r2 bucket create farmkung-assets
 [[r2_buckets]]
-binding = "ASSETS"
+binding = "R2_STORAGE"
 bucket_name = "farmkung-assets"

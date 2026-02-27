@@ -5,6 +5,6 @@
 // env.ASSETS → R2Bucket
 
 interface CloudflareEnv {
-  DB: D1Database;
-  ASSETS: R2Bucket;
+    DB: D1Database;
+    R2_STORAGE: R2Bucket;
 }
